@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1",
+        "option": "Good"
+    },
+    {
+        "id": "2",
+        "option": "Neutral"
+    },
+    {
+        "id": "3",
+        "option": "Bad"
+    }
+]
