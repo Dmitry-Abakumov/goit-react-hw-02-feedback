@@ -5,8 +5,6 @@ import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Section from './Section/Section';
 import Notification from 'shared/components/Notification/Notification';
 
-import options from 'data/options.json';
-
 class Feedback extends Component {
   state = {
     good: 0,
@@ -14,9 +12,9 @@ class Feedback extends Component {
     bad: 0,
   };
 
-  onFeedbackBtnClick = ({ target }) => {
+  onFeedbackBtnClick = option => {
     this.setState(prevState => ({
-      [target.name]: prevState[target.name] + 1,
+      [option]: prevState[option] + 1,
     }));
   };
 
@@ -42,7 +40,7 @@ class Feedback extends Component {
     return (
       <Section>
         <FeedbackOptions
-          options={options}
+          options={Object.keys(this.state)}
           onFeedbackBtnClick={this.onFeedbackBtnClick}
         />
         {this.countTotalFeedback(this.state) ? (

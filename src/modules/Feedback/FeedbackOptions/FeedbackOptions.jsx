@@ -6,8 +6,8 @@ import Button from 'shared/components/Button/Button';
 const FeedbackOptions = ({ options, onFeedbackBtnClick }) => {
   return (
     <Box display="flex" gridGap={10} mb={10} as="ul">
-      {options.map(({ id, option }) => (
-        <li key={id}>
+      {options.map(option => (
+        <li key={option}>
           <Button option={option} onClick={onFeedbackBtnClick} type="button" />
         </li>
       ))}
@@ -22,11 +22,6 @@ FeedbackOptions.defaultProps = {
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      option: PropTypes.string.isRequired,
-    })
-  ),
+  options: PropTypes.arrayOf(PropTypes.string.isRequired),
   onFeedbackBtnClick: PropTypes.func.isRequired,
 };

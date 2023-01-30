@@ -4,7 +4,7 @@ import StyledButton from './Button.styled';
 
 const Button = ({ option, onClick, type }) => {
   return (
-    <StyledButton onClick={onClick} name={option.toLowerCase()} type={type}>
+    <StyledButton onClick={() => onClick(option)} type={type}>
       {option}
     </StyledButton>
   );
