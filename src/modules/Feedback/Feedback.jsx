@@ -29,7 +29,7 @@ class Feedback extends Component {
 
     const positiveFeedbackPercentage = (good * 100) / totalReviews;
 
-    return Number(positiveFeedbackPercentage.toFixed(2));
+    return Number(Math.round(positiveFeedbackPercentage));
   }
 
   render() {
